@@ -60,7 +60,7 @@ public class GetDbDataService {
         List<FreightVendorDetails> results = freightVendorDetailsDao.findByPICKUPLOCATIONAndDESTINATIONLOCATION(pickUpLocation, destination);
 
         if (results.isEmpty()) {
-            return null; // or handle the case where no results are found
+            return ("Freight Vendors not found for the given location"); // or handle the case where no results are found
         } else if (results.size() == 1) {
             return results.get(0); // Return the single result
         } else {
